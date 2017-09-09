@@ -1,12 +1,51 @@
-<h1>Secretsales</h1>
+<md-toolbar class="toolbar">
+  <button md-icon-button
+          class="responsive"
+          (click)="sideNavClick()">
+    <md-icon class="example-icon">menu</md-icon>
+  </button>
 
-<wow-sidenav-container>
-  <wow-sidenav #sidenav mode="side" opened="true">
-    <button md-mini-fab (click)="sidenav.toggle()">
-      <md-icon>add</md-icon>
+  <button md-icon-button
+          class="responsive">
+    <md-icon class="example-icon">search</md-icon>
+  </button>
+
+  <span class="spacer responsive"></span>
+
+  <img class="logo" src="/assets/images/logo.png" [alt]="appName">
+
+  <span class="spacer responsive"></span>
+
+  <button md-icon-button
+          class="responsive">
+    <md-icon class="example-icon">person</md-icon>
+  </button>
+  <button md-icon-button
+          class="responsive">
+    <md-icon class="example-icon">shopping_cart</md-icon>
+  </button>
+
+  <md-toolbar-row id="categories">
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Women</a></li>
+      <li><a href="">Men</a></li>
+      <li><a href="">Kids</a></li>
+      <li><a href="">Home & Beauty</a></li>
+      <li><a href="/tech">Tech</a></li>
+      <li><a href="/outlet">Outlet</a></li>
+    </ul>
+
+    <span class="spacer"></span>
+
+    <button md-icon-button>
+      <md-icon class="example-icon">search</md-icon>
     </button>
 
-    <div class="example-scrolling-content">
-    </div>
-  </md-sidenav>
-</md-sidenav-container>
+    <a href="" class="login">SignUp/LogIn</a>
+
+    <button md-icon-button>
+      <md-icon class="example-icon">shopping_cart</md-icon>
+    </button>
+  </md-toolbar-row>
+</md-toolbar>

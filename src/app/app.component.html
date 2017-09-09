@@ -1,7 +1,17 @@
-<ss-header></ss-header>
+<md-sidenav-container class="app-container">
+  <md-sidenav #sidenav class="app-sidenav">
+    Jolly good!
+  </md-sidenav>
 
-<section class="content">
-  <router-outlet></router-outlet>
-</section>
+  <div class="app-sidenav-content">
+    <app-header [appName]="appName"
+                (onSideNavClick)="sidenav.open()"></app-header>
 
-<ss-footer></ss-footer>
+    <section class="app-content">
+      <router-outlet></router-outlet>
+    </section>
+
+    <app-footer></app-footer>
+  </div>
+
+</md-sidenav-container>

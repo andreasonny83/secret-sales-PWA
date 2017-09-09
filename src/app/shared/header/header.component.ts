@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
-  selector: 'ss-header',
+  selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input()
+  public appName: string;
 
-  constructor() { }
+  @Output()
+  onSideNavClick: EventEmitter<void>;
 
-  ngOnInit() {
+  constructor() {
+    this.onSideNavClick = new EventEmitter<void>();
   }
 
+  ngOnInit() {}
+
+  sideNavClick() {
+    this.onSideNavClick.emit();
+  }
 }

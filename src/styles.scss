@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'app-theme';
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  min-width: 320px;
+}
+
+html, body, app-root, md-sidenav-container, .app-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+app-root {
+  display: block;
+}
+
+app-header {
+  display: block;
+}
+
+.container {
+  max-width: 975px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  app-header {
+    position: sticky;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .mat-toolbar-row {
+    min-height: 80px;
+  }
+}

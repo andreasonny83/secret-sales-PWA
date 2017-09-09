@@ -117,13 +117,13 @@
     "directive-selector": [
       true,
       "attribute",
-      ["ss", "wow"],
+      ["ss", "wow", "app"],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      ["ss", "wow"],
+      ["ss", "wow", "app"],
       "kebab-case"
     ],
     "use-input-property-decorator": true,
