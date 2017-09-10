@@ -18,6 +18,11 @@ a:hover {
   background: white;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+}
+
 .login {
   font-size: 14px;
   text-decoration: none;
