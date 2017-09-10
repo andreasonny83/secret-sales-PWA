@@ -19,6 +19,5 @@ const HomeRoutes: ModuleWithProviders = RouterModule.forChild(routes);
 @NgModule({
   imports: [HomeRoutes],
   exports: [RouterModule],
-  providers: [],
 })
 export class RoutingModule { }
