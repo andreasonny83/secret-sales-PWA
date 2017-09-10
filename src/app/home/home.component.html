@@ -1,6 +1,10 @@
-<h2>Top sales</h2>
+<div class="titlebar">
+  <div class="container">
+    <h2>Top sales</h2>
+  </div>
+</div>
 
-<div class="container">
+<div class="container deals-container">
   <md-card class="deal-box"
           (click)="selectDeal(deal.id)"
           *ngFor="let deal of deals | slice:0:6">
@@ -16,16 +20,20 @@
       <p><strong>Ends in:</strong> {{ convertDate(deal.expiryDate) }}</p>
       <p class="right">Up to {{ deal.discountPercentage }}% off</p>
     </md-card-content>
-    <md-card-actions>
+    <md-card-actions align="right">
       <button md-button (click)="likeDeal($event)">LIKE</button>
-      <button md-button>SHARE</button>
+      <button md-button>BUY</button>
     </md-card-actions>
   </md-card>
 </div>
 
-<h2>Current sales</h2>
+<div class="titlebar">
+  <div class="container">
+    <h2>Current sales</h2>
+  </div>
+</div>
 
-<div class="container">
+<div class="container deals-container">
   <md-card class="deal-box"
           (click)="selectDeal(deal.id)"
           *ngFor="let deal of deals | slice:6">
