@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MdSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/delay';
 
 interface IDeals {
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     public snackBar: MdSnackBar,
+    private router: Router,
   ) {
     this.dealsUrl = 'https://public-api.wowcher.co.uk/v1/deal/national-deal/home';
   }
@@ -49,7 +51,7 @@ export class HomeComponent implements OnInit {
   }
 
   selectDeal(dealId: number) {
-    console.log(dealId);
+    this.router.navigate([`${this.router.routerState.snapshot.url}/deal/${dealId}`]);
   }
 
   likeDeal(event) {

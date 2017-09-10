@@ -5,7 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.onSideNavClick = new EventEmitter<void>();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   sideNavClick() {
     this.onSideNavClick.emit();
