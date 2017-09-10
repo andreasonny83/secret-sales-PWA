@@ -4,11 +4,20 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     children: [
-      { path: '', component: HomeComponent }
+      { path: '', component: HomeComponent },
+      { path: 'women', component: HomeComponent },
+      { path: 'men', component: HomeComponent },
+      { path: 'kids', component: HomeComponent },
+      { path: 'beauty', component: HomeComponent },
+      { path: 'tech', component: HomeComponent },
+      { path: 'outlet', component: HomeComponent },
+      { path: 'home', pathMatch: 'full', redirectTo: '' },
     ]
-  }
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

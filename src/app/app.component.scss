@@ -1,3 +1,36 @@
 .app-content {
   min-height: 500px;
 }
+
+.app-sidenav {
+  width: 75%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .item-list {
+    list-style: none;
+    display: block;
+
+    &.active {
+      background: rgba(0,0,0,.2);
+    }
+
+    &:hover {
+      background: rgba(0,0,0,.2);
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+      padding: 15px 10px 15px 20px;
+      display: block;
+      line-height: 20px;
+      height: 20px;
+      font-size: 16px;
+    }
+  }
+
+}

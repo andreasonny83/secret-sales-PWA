@@ -30,13 +30,13 @@
   <md-toolbar-row id="categories">
     <div class="container">
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Women</a></li>
-        <li><a href="">Men</a></li>
-        <li><a href="">Kids</a></li>
-        <li><a href="">Home & Beauty</a></li>
-        <li><a href="/tech">Tech</a></li>
-        <li><a href="/outlet">Outlet</a></li>
+        <li><a (click)="routeTo($event, 'home')" href="">Home</a></li>
+        <li><a (click)="routeTo($event, 'women')" href="">Women</a></li>
+        <li><a (click)="routeTo($event, 'men')" href="">Men</a></li>
+        <li><a (click)="routeTo($event, 'kids')" href="">Kids</a></li>
+        <li><a (click)="routeTo($event, 'beauty')" href="">Home & Beauty</a></li>
+        <li><a (click)="routeTo($event, 'tech')" href="">Tech</a></li>
+        <li><a (click)="routeTo($event, 'outlet')" href="">Outlet</a></li>
       </ul>
 
       <span class="spacer"></span>

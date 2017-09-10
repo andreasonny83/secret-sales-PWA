@@ -1,4 +1,4 @@
-<div class="titlebar">
+<div class="titlebar" *ngIf="deals && deals.length">
   <div class="container">
     <h2>Top sales</h2>
   </div>
@@ -8,8 +8,7 @@
   <md-card class="deal-box"
           (click)="selectDeal(deal.id)"
           *ngFor="let deal of deals | slice:0:6">
-
-          <md-card-header>
+    <md-card-header>
       <md-card-title>{{ deal.headline }}</md-card-title>
     </md-card-header>
 
@@ -25,9 +24,17 @@
       <button md-button>BUY</button>
     </md-card-actions>
   </md-card>
+
+  <div class="spinner-wrapper" *ngIf="!(deals && deals.length)">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      <span>Loading...</span>
+    </div>
+  </div>
 </div>
 
-<div class="titlebar">
+<div class="titlebar" *ngIf="deals && deals.length">
   <div class="container">
     <h2>Current sales</h2>
   </div>

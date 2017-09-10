@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MdSnackBar } from '@angular/material';
+import 'rxjs/add/operator/delay';
 
 interface IDeals {
   id: number;
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http
       .get(this.dealsUrl)
+      .delay(2000)
       .subscribe((data: any) => {
         this.deals = data.deals;
       });

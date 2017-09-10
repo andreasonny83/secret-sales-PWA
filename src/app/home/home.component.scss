@@ -8,6 +8,21 @@ h2 {
   font-size: 18px;
 }
 
+.spinner-wrapper {
+  padding: 20px 0;
+
+  .spinner {
+    .double-bounce1,
+    .double-bounce2 {
+      background-color: #65cdbc;
+    }
+
+    span {
+      color: #333;
+    }
+  }
+}
+
 .deals-container {
   display: flex;
   flex-direction: row;

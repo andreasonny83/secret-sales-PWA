@@ -5,6 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,9 @@ export class HeaderComponent implements OnInit {
   @Output()
   onSideNavClick: EventEmitter<void>;
 
-  constructor() {
+  constructor(
+    private router: Router,
+  ) {
     this.onSideNavClick = new EventEmitter<void>();
   }
 
@@ -26,5 +29,10 @@ export class HeaderComponent implements OnInit {
 
   sideNavClick() {
     this.onSideNavClick.emit();
+  }
+
+  routeTo(event: MouseEvent, path: string) {
+    event.preventDefault();
+    this.router.navigate([`/home/${path}`]);
   }
 }
