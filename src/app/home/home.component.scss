@@ -1,0 +1,18 @@
+.deal-box {
+  margin: 20px;
+  width: 400px;
+  cursor: pointer;
+
+  .content {
+    padding-bottom: 10px;
+
+    p {
+      float: left;
+      margin: 0;
+    }
+
+    .right {
+      float: right;
+    }
+  }
+}

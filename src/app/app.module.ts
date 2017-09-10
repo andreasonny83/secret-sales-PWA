@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MdToolbarModule,
   MdIconModule,
   MdSidenavModule,
+  MdCardModule,
+  MdButtonModule,
+  MdSnackBarModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +27,11 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MdSidenavModule,
+    MdButtonModule,
+    MdCardModule,
+    MdSnackBarModule,
     SharedModule,
     AppRoutingModule,
   ],

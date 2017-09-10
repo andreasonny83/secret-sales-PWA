@@ -1,3 +1,40 @@
-<p>
-  home works!
-</p>
+<div class="delas-container">
+
+  <h2>Top sales</h2>
+
+  <md-card class="deal-box"
+           (click)="selectDeal(deal.id)"
+           *ngFor="let deal of deals | slice:0:6">
+    <md-card-header>
+      <md-card-title>{{ deal.headline }}</md-card-title>
+    </md-card-header>
+    <img md-card-image src="{{deal.images[0].imageUrl}}.jpg">
+    <md-card-content class="content">
+      <p><strong>Ends in:</strong> {{ convertDate(deal.expiryDate) }}</p>
+      <p class="right">Up to {{ deal.discountPercentage }}% off</p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button (click)="likeDeal($event)">LIKE</button>
+      <button md-button>SHARE</button>
+    </md-card-actions>
+  </md-card>
+
+  <h2>Current sales</h2>
+
+  <md-card class="deal-box"
+  (click)="selectDeal(deal.id)"
+  *ngFor="let deal of deals | slice:6">
+<md-card-header>
+<md-card-title>{{ deal.headline }}</md-card-title>
+</md-card-header>
+<img md-card-image src="{{deal.images[0].imageUrl}}.jpg">
+<md-card-content class="content">
+<p><strong>Ends in:</strong> {{ convertDate(deal.expiryDate) }}</p>
+<p class="right">Up to {{ deal.discountPercentage }}% off</p>
+</md-card-content>
+<md-card-actions>
+<button md-button (click)="likeDeal($event)">LIKE</button>
+<button md-button>SHARE</button>
+</md-card-actions>
+</md-card>
+</div>
