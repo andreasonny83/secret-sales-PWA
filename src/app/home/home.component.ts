@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
       .get(this.dealsUrl)
       .subscribe((data: any) => {
         this.deals = data.deals;
-        console.log(this.deals);
       });
 
     this.startTimer();

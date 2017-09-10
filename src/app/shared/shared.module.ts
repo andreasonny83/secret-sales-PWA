@@ -7,6 +7,7 @@ import {
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   imports: [
@@ -18,10 +19,12 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    ScrollToTopComponent,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
+    ScrollToTopComponent,
   ]
 })
 export class SharedModule { }

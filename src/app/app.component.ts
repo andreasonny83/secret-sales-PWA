@@ -7,7 +7,7 @@ import { SecretSalesService } from './secret-sales.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  appName: string;
+  public appName: string;
 
   constructor(
     private secretSalesService: SecretSalesService,

@@ -1,12 +1,14 @@
 <md-sidenav-container class="app-container">
+  <app-header [appName]="appName"
+              (onSideNavClick)="sidenav.open()"></app-header>
+
   <md-sidenav #sidenav class="app-sidenav">
-    Jolly good!
+    <p>Jolly good!</p>
+    <p>Jolly good!</p>
+    <p>Jolly good!</p>
   </md-sidenav>
 
   <div class="app-sidenav-content">
-    <app-header [appName]="appName"
-                (onSideNavClick)="sidenav.open()"></app-header>
-
     <section class="app-content">
       <router-outlet></router-outlet>
     </section>
@@ -15,3 +17,5 @@
   </div>
 
 </md-sidenav-container>
+
+<app-scroll-to-top target=".mat-drawer-content" threshold="500"></app-scroll-to-top>
