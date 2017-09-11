@@ -33,6 +33,6 @@ export class HeaderComponent implements OnInit {
 
   routeTo(event: MouseEvent, path: string) {
     event.preventDefault();
-    this.router.navigate([`/home/${path}`]);
+    this.router.navigate([`/app/${path}`]);
   }
 }

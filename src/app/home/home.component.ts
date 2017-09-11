@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MdSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/switchMap';
 
 interface IDeals {
   id: number;
@@ -24,15 +26,46 @@ export class HomeComponent implements OnInit {
   deals: IDeals[];
   dateNow: Date;
 
+  private categoryName: any;
+  private parentUrl: string;
+
   constructor(
     private http: HttpClient,
     public snackBar: MdSnackBar,
+    private route: ActivatedRoute,
     private router: Router,
   ) {
     this.dealsUrl = 'https://public-api.wowcher.co.uk/v1/deal/national-deal/home';
   }
 
   ngOnInit(): void {
+    if (!/deal/.test(this.router.routerState.snapshot.url)) {
+      this.parentUrl = this.router.routerState.snapshot.url;
+    }
+
+    this.fetchDeals();
+
+    this.router
+      .events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          if (/deal/.test(event.url)) {
+            return;
+          }
+
+          if (event.url === this.parentUrl) {
+            return;
+          }
+
+          this.parentUrl = event.url;
+          this.deals = null;
+          this.fetchDeals();
+        }
+      });
+
+  }
+
+  fetchDeals() {
     this.http
       .get(this.dealsUrl)
       .delay(2000)
