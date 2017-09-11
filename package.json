@@ -5,7 +5,7 @@
   "author": "Andrea Sonny <andreasonny83@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://andreazornada@bitbucket.org/andreazornada/secret-sales.git"
+    "url": "git@github.com:andreasonny83/secret-sales-PWA.git"
   },
   "scripts": {
     "ng": "ng",

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MdSnackBar } from '@angular/material';
+import { SecretSalesService } from '../secret-sales.service';
 import { ActivatedRoute, ParamMap, Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/delay';
@@ -28,13 +29,16 @@ export class HomeComponent implements OnInit {
 
   private categoryName: any;
   private parentUrl: string;
+  private firstRun: boolean;
 
   constructor(
     private http: HttpClient,
     public snackBar: MdSnackBar,
     private route: ActivatedRoute,
     private router: Router,
+    private secretSalesService: SecretSalesService,
   ) {
+    this.firstRun = true;
     this.dealsUrl = 'https://public-api.wowcher.co.uk/v1/deal/national-deal/home';
   }
 
@@ -63,6 +67,23 @@ export class HomeComponent implements OnInit {
         }
       });
 
+      this.secretSalesService.online$.subscribe((val) => {
+        if (!val) {
+          this.snackBar.open('You have lost your Internet connection.', null, {
+            duration: 2000,
+          });
+        } else if (!this.firstRun) {
+          this.snackBar.open('You are back online!', null, {
+            duration: 2000,
+          });
+        }
+
+        this.firstRun = false;
+
+        if (!!val && !this.deals) {
+          this.fetchDeals();
+        }
+      });
   }
 
   fetchDeals() {
